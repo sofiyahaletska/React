@@ -1,0 +1,27 @@
+.sidebar {
+  width: 240px;
+  height: 528px;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  border-right: 3px solid #8a48aa;
+}
+
+.sidebar .sidebar-title {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.sidebar .sidebar-item {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.sidebar .sidebar-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar .sidebar-item a.selected {
+  font-size: 20px;
+}
