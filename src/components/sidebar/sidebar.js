@@ -1,16 +1,14 @@
 import React from 'react';
-
 import './sidebar.css';
-
 import { NavLink } from 'react-router-dom';
 
 const Sidebar = (props) => (
   <aside className='sidebar'>
     <div className='sidebar-title'>Activities</div>
 
-    {props.lists.map((list) => (
-      <div className='sidebar-item' key={list.id}>
-        <NavLink to={`${list.page_name}/${list.id}`} activeClassName="selected">{list.name}</NavLink>
+    {props.lists.map((info) => (
+      <div className='sidebar-item' key={info.id}>
+        <NavLink to={`/${info.pageName}/${info.id}`} activeClassName="selected">{info.name}</NavLink>
       </div>
     ))}
   </aside>

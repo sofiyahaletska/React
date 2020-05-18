@@ -1,17 +1,16 @@
 import React from 'react';
-
+import "./container.css"
+import {NavLink} from "react-router-dom";
 class Container extends React.Component {
-
     render() {
-        const { list } = this.props;
+        const { info } = this.props;
         return (
-            <div className='container'>
-                <div className='header'>{list.name}</div>
-                {list.Activities.map((activity) => (
-                    <div key={activity.id}>
-                        <span>{activity.description}</span>
-                    </div>
-                ))}
+            <div className='container-container'>
+                    <div className='container-header'>{info.name}</div>
+                    <span>{info.description}</span>
+                <NavLink to={`/${info.activityPage}`} className="container-button">
+                    <span>{info.buttonName}</span>
+                </NavLink>
             </div>
         );
     }

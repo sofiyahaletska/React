@@ -1,5 +1,6 @@
-.Improve-page{
+.Improve-page {
     background-image: url("../../images/improve.jpg");
     background-position: center;
     background-size: cover;
+    display: flex;
 }

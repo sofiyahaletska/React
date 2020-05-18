@@ -13,27 +13,32 @@ export default class Improve extends React.Component {
             {
                 name: "Improve your pronunciation",
                 id: 1,
-                page_name: "improve",
+                pageName: "improve",
+                activityPage: "articulation_exercises",
+                buttonName: "Let's go practice!",
                 description: "Some info about exercises "
             },
             {
                 name: "What book to read",
                 id: 2,
-                page_name: "improve",
+                pageName: "improve",
+                activityPage: "book_adviser",
+                buttonName: "Find a book",
                 description: "Some info about books page"
             },
         ],
     };
-
+    getActivityById(ActivityId) {
+        return this.state.Activities.find((activity) => activity.id == ActivityId);
+    }
     render(){
         return (<div className= "Improve-page">
-            <Sidebar lists={this.state.Activities}></Sidebar>
+            <Sidebar lists={this.state.Activities}> </Sidebar>
             <Route
                 path='/improve/:id'
-                render={() => (
-                    <Container list={this.state}/>
-                )}
-            ></Route>
+                render={(props) => (
+                    <Container info={this.getActivityById(props.match.params.id)}/>)}>
+            </Route>
         </div>)
     }
 }
