@@ -9,9 +9,14 @@ import comicsReader from "./components/comics_reader/comicsReader";
 import gameAdviser from "./components/game_adviser";
 import Karaoke from "./components/karaoke";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import configStore from './store';
+
+const store = configStore();
 
 function App() {
   return (
+      <Provider store={store}>
           <BrowserRouter>
           <Header> </Header>
               <Switch>
@@ -25,6 +30,7 @@ function App() {
                   <Route path='/' component={Main} />
               </Switch>
           </BrowserRouter>
+          </Provider>
   );
 }
 
